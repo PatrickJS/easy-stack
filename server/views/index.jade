@@ -1,0 +1,55 @@
+!!! 5
+head
+  meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width')
+    link(rel='stylesheet', href='styles/main.css')
+  body#ng-app
+    //if lt IE 7
+      p.browsehappy
+        | You are using an
+        strong outdated
+        | browser. Please
+        a(href='http://browsehappy.com/') upgrade your browser
+        | to improve your experience.
+    //if lt IE 9
+      script(src='#{bower}/es5-shim/es5-shim.js')
+      script(src='#{bower}/json3/lib/json3.min.js')
+    //
+       Add your site or application content here
+    .container(ui-view='ui-view')
+    //
+       Google Analytics: change UA-XXXXX-X to be your site's ID
+    script
+      var _gaq = [];
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-XXXXX-X');
+      ga('send', 'pageview');
+
+    script(src='#{bower}/jquery/jquery.js')
+    script(src='#{bower}/raven-js/dist/1.0.8/raven.js')
+    script(src='#{bower}/lodash/dist/lodash.js')
+    script(src='#{bower}/angular/angular.js')
+    script(src='#{bower}/angular-animate/angular-animate.js')
+    script(src='#{bower}/angular-translate/angular-translate.js')
+    script(src='#{bower}/angular-cookies/angular-cookies.js')
+    script(src='#{bower}/angular-sanitize/angular-sanitize.js')
+    script(src='#{bower}/angular-ui-router/release/angular-ui-router.js')
+    script(src='#{bower}/restangular/dist/restangular.js')
+    script(src='#{bower}/angularytics/dist/angularytics.js')
+    script(src='#{bower}/angular-raven/angular-raven.js')
+    script(src='scripts/app.js')
+    script(src='scripts/config.js')
+    script(src='scripts/controllers/main.js')
+    script(src='scripts/directives/default.js')
+    script(src='scripts/filters/default.js')
+    script(src='scripts/services/default.js')
+    script(src='scripts/modules/default.js')
+
+    script
+      angular.bootstrap(document.getElementById('ng-app'), ['easyApp']);
