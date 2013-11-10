@@ -18,7 +18,7 @@ module.exports = function (grunt) {
 
   // configurable paths
   var yeomanConfig = {
-    app: 'public',
+    app: 'client',
     dist: 'dist'
   };
 
