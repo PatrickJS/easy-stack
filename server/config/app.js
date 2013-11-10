@@ -7,9 +7,18 @@ module.exports = function() {
 
   // Store all environment variables
   app.set('port', process.env.PORT || 3000);
-  app.set('env', process.env.NODE_ENV || 'development');
+  app.set('env',  process.env.NODE_ENV || 'development');
   app.set('views', __dirname + '../views');
   app.set('view engine', 'jade');
+
+  //Set locals for jade views
+  app.locals({
+    bower:       'bower_components',
+    environment: process.env.NODE_ENV,
+    development: process.env.NODE_ENV === 'development',
+    staging:     process.env.NODE_ENV === 'staging',
+    production:  process.env.NODE_ENV === 'production'
+  });
 
   // Basic configuration
   app.configure(function() {
