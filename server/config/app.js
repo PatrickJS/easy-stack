@@ -1,9 +1,23 @@
 var express = require('express');
-var path = require('path');
+var path    = require('path');
+var stylus  = require('stylus');
+var nib     = require('nib');
 
 module.exports = function() {
   var app = express();
-  var publicDir = path.join(__dirname, '../../public');
+
+  var publicDir = function(path) {
+    path = path || '';
+    return path.join(__dirname, '../../client'+path);
+  };
+
+  var compile = function (str, path) {
+    return stylus(str)
+      .set('filename', path)
+      .set('compress', true)
+      .set('warn', true)
+      .render(nib());
+  };
 
   // Store all environment variables
   app.set('port', process.env.PORT || 3000);
@@ -22,11 +36,16 @@ module.exports = function() {
 
   // Basic configuration
   app.configure(function() {
+    app.use(stylus.middleware({
+      src: publicDir('/styles/'),
+      dest: publicDir('/styles/'),
+      compile: compile
+    }));
     app.use(express.logger('dev'));
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
-    app.use(express.static(publicDir));
+    app.use(express.static(publicDir()));
   });
 
   // Environment specific configuration
