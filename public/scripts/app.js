@@ -2,39 +2,37 @@
 
 /* Your Easy app */
 angular.module('easyApp', [
-  'easy.filters',
-  'easy.services',
-  'easy.directives',
-  'easy.controllers',
-  'easy.modules'
+  'controllers',
+  'directives',
+  'filters',
+  'services',
+  'modules'
 ]);
 
 // Controllers
-angular.module('easy.controllers', [
-  'easy.controllers.main'
-]);
-
+angular.module('controllers', []);
 // Directives
-angular.module('easy.directives', [
-  'easy.directives.default'
-]);
+angular.module('directives', []);
 
 // Filters
-angular.module('easy.filters', [
-  'easy.filters.default'
-]);
+angular.module('filters', []);
 
 // Services
-angular.module('easy.services', [
-  'easy.services.default'
-]);
+angular.module('services', []);
 
 // Modules
-angular.module('easy.modules', [
-  'ui.router',
+angular.module('modules', [
   'ngAnimate',
-  'restangular',
   'angularytics',
-  'angular-raven',
-  'easy.modules.default'
+  'restangular',
+  'ui.router'
 ]);
+
+
+
+var app = angular.module('easyApp');
+var controllers = angular.module('controllers').controller;
+var directives = angular.module('directives').directive;
+var filters = angular.module('filters').filter;
+var services = angular.module('services');
+var modules = angular.modules('modules')
