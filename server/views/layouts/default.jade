@@ -1,5 +1,13 @@
 doctype 5
-html(lang="en")
+//if lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7(lang='en')
+//if lt lt IE 7
+  html.no-js.lt-ie9.lt-ie8.lt-ie7(lang='en')
+//if IE 7
+  html.no-js.lt-ie9.lt-ie8(lang='en')
+//if IE 8
+  html.no-js.lt-ie9.lt-ie8(lang='en')
+| <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 head
   //if lte IE 8
     script
@@ -11,6 +19,7 @@ head
     script(src='#{bower}/es5-shim/es5-sham.min.js')
     script(src='#{bower}/json3/lib/json3.min.js')
 
+  //- Include CSS and meta tag files
   include ../partials/head
 
   if production
@@ -31,7 +40,14 @@ body
       a(href='http://browsehappy.com/')  upgrade your browser
       |  to improve your experience.
 
+  //- Main content
   block content
+
+  if development
+      script(src='#{bower}/jquery/jquery.js')
+
+  //- Include Javascript files
+  include ../partials/head
 
   if development
     style
