@@ -1,7 +1,9 @@
 {
-  "name": "easy",
+  "name": "easy-stack",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+
+    },
   "devDependencies": {
     "load-grunt-tasks": "~0.1.0",
     "time-grunt": "~0.1.0",
@@ -41,7 +43,7 @@
     "grunt-contrib-stylus": "~0.8.0"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.10.0"
   },
   "scripts": {
     "start": "grunt server",
