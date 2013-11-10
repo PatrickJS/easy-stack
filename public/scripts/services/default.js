@@ -1,8 +1,14 @@
 'use strict';
 
-angular.module('easy.services.default', [])
-  .factory('default', function() {
-    return {
+services.provider('default', function() {
+  var _development = null;
+  this.development = function(config) {
+    _development = config || null;
+    return this;
+  };
 
-    }
-  });
+  this.$get = function() {
+
+  };
+
+});
