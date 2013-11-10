@@ -2,8 +2,9 @@
   "name": "easy-stack",
   "version": "0.0.0",
   "dependencies": {
-
-    },
+    "stylus": "~0.40.0",
+    "nib": "~1.0.1"
+  },
   "devDependencies": {
     "load-grunt-tasks": "~0.1.0",
     "time-grunt": "~0.1.0",
