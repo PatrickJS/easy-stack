@@ -1,2 +1,3 @@
-# Work in Progress
-# easy-seed
+Easy Stack
+===
+Work in Progress
