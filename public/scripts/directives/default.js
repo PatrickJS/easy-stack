@@ -1,8 +1,7 @@
 'use strict';
 
-angular.module('easy.directives.default', [])
-  .directive('default', function() {
-    return {
+directives('default', function() {
+  return {
 
-    }
-  });
+  }
+});
